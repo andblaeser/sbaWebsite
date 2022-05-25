@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Just Dogs</title>
+    <link rel="stylesheet" type="text/css" href="./css/main.css" />
+    <style>
+      body {
+        background-color: #fefae0;
+      }
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Just Dogs</h1>
+    <nav style="width: 100%; height: 20px; background-color: #d4a373">
+      <ul>
+        <a href="./mailingList.html">
+          <li>Mailing List</li>
+        </a>
+      </ul>
+    </nav>
+    <p>Choose your favorite breed of dogs:</p>
+    <form class="breed_selector">
+      <input
+        type="radio"
+        id="labs"
+        name="breed"
+        value="labs"
+        onclick="showLabs()"
+      />
+      <label for="labs">Labrador Retriever</label><br />
+      <input
+        type="radio"
+        id="german"
+        name="breed"
+        value="german"
+        onclick="showGerman()"
+      />
+      <label for="labs">German Shepherd</label><br />
+      <input
+        type="radio"
+        id="corgi"
+        name="breed"
+        value="corgi"
+        onclick="showCorgi()"
+      />
+      <label for="labs">Corgi</label>
+    </form>
+    <div class="text_container">
+      <p>Look at these beautiful dogs!</p>
+    </div>
+
+    <script>
+      function showLabs() {
+        document.getElementById("lab_container").style.display = "block";
+        document.getElementById("german_container").style.display = "none";
+        document.getElementById("corgi_container").style.display = "none";
+      }
+
+      function showGerman() {
+        document.getElementById("lab_container").style.display = "none";
+        document.getElementById("german_container").style.display = "block";
+        document.getElementById("corgi_container").style.display = "none";
+      }
+
+      function showCorgi() {
+        document.getElementById("lab_container").style.display = "none";
+        document.getElementById("german_container").style.display = "none";
+        document.getElementById("corgi_container").style.display = "block";
+      }
+    </script>
+
+    <div class="slideshow_container" id="lab_container">
+      <center>
+        <video
+          src="./video/labvid.mp4"
+          width="320"
+          height="240"
+          controls
+        ></video>
+      </center>
+      <div class="lab_slides">
+        <img
+          src="./img/lab1.jpg"
+          alt="chocolate lab puppy"
+          style="width: 100%"
+        />
+      </div>
+      <div class="lab_slides">
+        <img src="./img/lab2.jpg" alt="adult black lab" style="width: 100%" />
+      </div>
+      <div class="lab_slides">
+        <img src="./img/lab3.jpg" alt="adult yellow lab" style="width: 100%" />
+      </div>
+      <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+    </div>
+
+    <div class="slideshow_container" id="german_container">
+      <center>
+        <video
+          src="./video/germanvid.mp4"
+          width="320"
+          height="240"
+          controls
+        ></video>
+      </center>
+      <div class="german_slides">
+        <img
+          src="./img/german1.jpg"
+          alt="german shepherd laying down"
+          style="width: 100%"
+        />
+      </div>
+      <div class="german_slides">
+        <img
+          src="./img/german2.jpg"
+          alt="german shepherd headshot"
+          style="width: 100%"
+        />
+      </div>
+      <div class="german_slides">
+        <img
+          src="./img/german3.jpg"
+          alt="german shepherd with a stick"
+          style="width: 100%"
+        />
+      </div>
+      <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+    </div>
+
+    <div class="slideshow_container" id="corgi_container">
+      <center>
+        <video
+          src="./video/corgivid.mp4"
+          width="320"
+          height="240"
+          controls
+        ></video>
+      </center>
+      <div class="corgi_slides">
+        <img src="./img/corgi1.jpg" alt="corgi portrait" style="width: 100%" />
+      </div>
+      <div class="corgi_slides">
+        <img
+          src="./img/corgi2.jpg"
+          alt="corgi writing code"
+          style="width: 100%"
+        />
+      </div>
+      <div class="corgi_slides">
+        <img
+          src="./img/corgi3.jpg"
+          alt="corgi taking a nap"
+          style="width: 100%"
+        />
+      </div>
+      <a class="prev" onclick="plusSlides(-1, 2)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1, 2)">&#10095;</a>
+    </div>
+
+    <script>
+      let slideIndex = [1, 1, 1];
+      let slideId = ["lab_slides", "german_slides", "corgi_slides"];
+      showSlides(1, 0);
+      showSlides(1, 1);
+      showSlides(1, 2);
+
+      function plusSlides(n, no) {
+        showSlides((slideIndex[no] += n), no);
+      }
+
+      function showSlides(n, no) {
+        let i;
+        let x = document.getElementsByClassName(slideId[no]);
+        if (n > x.length) {
+          slideIndex[no] = 1;
+        }
+        if (n < 1) {
+          slideIndex[no] = x.length;
+        }
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        x[slideIndex[no] - 1].style.display = "block";
+      }
+    </script>
+  </body>
+</html>

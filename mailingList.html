@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Just Dogs - Mailing List</title>
+    <link rel="stylesheet" type="text/css" href="./css/main.css" />
+    <style>
+      body {
+        background-color: #fefae0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Mailing List</h1>
+    <nav style="width: 100%; height: 20px; background-color: #d4a373">
+      <ul>
+        <a href="./index.html">
+          <li>Home</li>
+        </a>
+      </ul>
+    </nav>
+    <div>
+      <img src="./img/mail.jpg" alt="envelope containing letter" />
+    </div>
+
+    <div class="form_container">
+      <h2>Join our mailing list</h2>
+      <h3>Get dog pics sent straight to your inbox!</h3>
+      <form
+        class="form"
+        method="post"
+        action="./thanks.html"
+        id="form"
+        name="myForm"
+        onsubmit="return(validate())"
+      >
+        <table cellspacing="2" cellpadding="2" border="1">
+          <tr class="field_container">
+            <td><img src="./img/name.png" alt="name icon" /></td>
+            <td>
+              <input
+                type="text"
+                id="name"
+                name="Name"
+                pattern="[-A-Za-z\s]{1,32}"
+                placeholder="John Doe"
+                required
+              />
+            </td>
+          </tr>
+          <tr class="field_container">
+            <td><img src="./img/email.png" alt="email icon" /></td>
+            <td>
+              <input
+                type="email"
+                id="email"
+                name="EMail"
+                placeholder="Email@website.com"
+                required
+              />
+            </td>
+          </tr>
+          <tr class="button_container">
+            <td><input type="submit" value="Submit" /></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+    <script type="text/javascript" src="./js/main.js"></script>
+  </body>
+</html>
