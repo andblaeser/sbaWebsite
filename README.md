@@ -1,6 +1,6 @@
 # Just Dogs
 
-By Andrew Blaeser
+By Andrew Blaeser <br> Github: https://github.com/andblaeser/sbaWebsite
 
 ## Technologies Used
 
