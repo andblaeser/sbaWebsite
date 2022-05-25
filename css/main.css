@@ -165,8 +165,8 @@ p {
 }
 
 .dropbtn {
-  background-color:#d4a373;
-  color:#fefae0;
+  background-color: #d4a373;
+  color: #fefae0;
   padding: 16px;
   font-size: 16px;
   border: none;
@@ -202,5 +202,5 @@ p {
 }
 
 .dropdown:hover .dropbtn {
-  background-color:#ccd5ae;
+  background-color: #ccd5ae;
 }
